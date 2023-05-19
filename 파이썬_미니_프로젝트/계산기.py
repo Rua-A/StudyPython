@@ -17,8 +17,8 @@ print(f'첫번째 수 : {f}, 두번째 수 : {s}')
 #b. 산술 연산(예: 더하기, 빼기, 곱하기, 나누기)이 있는 메뉴를 표시합니다.
 while True:
      try:
-          ch = int(input('진행할 연산을 고르세요. 1.더하기 , 2.빼기, 3.곱하기, 4.나누기\n'))
-          if ch < 1 or ch > 4:
+          ch = int(input('진행할 연산을 고르세요. 1.더하기 , 2.빼기, 3.곱하기, 4.나누기, 5.지수, 6.모듈러스\n'))
+          if ch < 1 or ch > 6:
                raise ValueError("1부터 4까지의 번호를 입력해주세요.")
           break
      except ValueError as e:
@@ -26,21 +26,30 @@ while True:
 #c. 사용자의 선택에 따라 숫자에 대해 선택한 작업을 수행합니다.
 
 def one_Addition(f,s):
-    return f+s
-
+     print(f'더하기 {f} + {s} ')
+     return f+s
 def two_Subtraction(f,s):
-    return f-s
-
+     print(f'빼기 {f} - {s}')
+     return f-s
 def three_Multiplication(f,s):
-    return f*s
+     print(f'곱하기 {f} * {s}')
+     return f*s
 def four_Division(f,s):
-    return round(f/s,7)
-
+     print(f'나누기 {f} / {s}')
+     return round(f/s,7)
+def five_Exponential(f,s):
+     print(f'지수 {f} ** {s}')
+     return f**s
+def six_Modulus(f,s):
+     print(f'모듈러스 {f} % {s}')
+     return f%s
 switch = {
     1: one_Addition,
     2: two_Subtraction,
     3: three_Multiplication,
-    4: four_Division
+    4: four_Division,
+    5: five_Exponential,
+    6: six_Modulus
 }
 
 def switch_case(x,f,s):
